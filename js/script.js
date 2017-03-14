@@ -1,5 +1,5 @@
-var x=3;
+alert=prompt('Как тебя зовут?');
 function test(name){
-	alert("Привет"+name);
+	alert("Привет! "+name+'.');
 }
-test("Роман");
+test();
