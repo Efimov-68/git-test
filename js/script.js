@@ -123,3 +123,9 @@ for(z=0; z<=10; z++){
 	}
 	document.write(z+'<br/>');
 }
+//
+var q = 0;
+while(q<=10){
+	document.write(q+"UUUhhhh."+'<br/>');
+	q++;
+}
