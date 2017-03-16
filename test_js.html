@@ -3,13 +3,132 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
 	<style type="text/css">
 		
 	</style>
-	<script type="text/javascript" src="./js/script.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" scr="./bootstrap/js/bootstrap.js"></script>
+	<!--script type="text/javascript" src="./js/script.js"></script-->
 	<title></title>
 </head>
 <body>
+	<header>
+		<div>
+			<h1>Заголовок 1</h1>
+			<ul>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</header>
+	<div>
+		<h2>Заголовок 2</h2>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+	</div>
+	<!--div>
+		<h2>Заголовок 2</h2>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+		<p>Текст абзаца...</p>
+	</div-->
+	<footer>
+		<div id='highlightedDiv'>
+			<p>Права правообладателя&copy;</p>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		//
+		/*var i=0;
+		while(i<=10){
+			document.write(i);
+			i++;
+		}
+		//Переменные
+		var price=20;
+		var itemOrdered=15;
+		var totalCost=price*itemOrdered;
+		//
+		var a=4;
+		var b=5;
+		var c=10;
+		alert((a+b)*c);
+		document.write(a+b*c);
+		//
+		var firstName='Ivan';
+		var lastName='Petrov';
+		var fullName=firstName+' '+lastName;
+		alert(fullName);
+		//
+		var numOfVisits=101;
+		var message="Vy posetili etot sait"+' '+numOfVisits+' '+"raz";
+		alert(message);
+		//
+		var numOfShoes='42';
+		var numSocks=4;
+		var totalItems=numOfShoes+numSocks;
+		alert(totalItems);
+		//
+		var numOfShoes='42';
+		var numSocks=4;
+		var totalItems=+numOfShoes+numSocks;
+		alert(totalItems);
+		//
+		var numOfShoes='42';
+		var numSocks=4;
+		var totalItems=Number(numOfShoes)+numSocks;
+		alert(totalItems);
+		//
+		var score=0;
+		score=100;
+		alert(score);
+		//
+		var score=0;
+		score=score+100;
+		alert(score);
+		//
+		var score=0;
+		score+=100;
+		alert(score);
+		//
+		var firstName='Sasha';
+		var lastName='Ivanov';
+		document.write('<p>');
+		document.write(firstName+' '+lastName);
+		document.write('</p>');*/
+		//Массивы
+		var days=['Mon ', 'Wen ', 'Th ','Fr '];
+		//отобразить элемент массива
+		//alert(days[2]);
+		document.write(days[days.length-2])
+		//добавление и удаление массива;
+		var properties=['red', 'blue', 'green', 'yellow'];
+		properties[3]='bold';
+		properties.push('yellow');
+		properties.unshift('solid');
+		properties.pop();
+		properties.shift();
+		alert(properties);
+		//
+		//$('#highlightedDiv').css('background-color', '#FF0000');
+		//$('#highlightedDiv').css('border', '2px solid #FE0037');
+		$('#highlightedDiv').css({
+			'background-color' : '#FF0000', 
+			'border' : '2px solid #FE0037'
+		});
+		//
+		function text(name){
 
+		}
+
+	</script>
 </body>
 </html>
