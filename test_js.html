@@ -5,16 +5,35 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
 	<style type="text/css">
-		
+		.pullquote {
+			float: right;
+			clear: right;
+			width: 250px;
+			padding: 10px;
+			font-size: 20px;
+			background-color: rgba(255, 211, 224, 0.5);
+			border-radius: 10px;
+			margin: 20px 0 10px 10px;
+			font-style: italic;
+		}
 	</style>
 	<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" scr="./bootstrap/js/bootstrap.js"></script>
-	<!--script type="text/javascript" src="./js/script.js"></script-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('span.pq').each(function(){
+				var quote=$(this).clone();
+				quote.removeClass('pq');
+				quote.addClass('pullquote');
+				$(this).before(quote);
+			});
+		});
+	</script>
 	<title></title>
 </head>
 <body>
 	<header>
-		<!--div>
+		<div><span class='pq'>
 			<h1>Заголовок 1</h1>
 			<ul>
 				<li><a href="#"></a></li>
@@ -24,7 +43,7 @@
 				<li><a href="#"></a></li>
 				<li><a href="#"></a></li>
 			</ul>
-		</div-->
+		</span></div>
 	</header>
 	<div>
 		<h2>Заголовок 2</h2>
