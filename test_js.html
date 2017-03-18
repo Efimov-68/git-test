@@ -16,23 +16,81 @@
 			margin: 20px 0 10px 10px;
 			font-style: italic;
 		}
+		#container{
+			width: 200px;
+			height: 200px;
+			background: green;
+			position: relative;
+		}
+		#box{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+		}
+
 	</style>
 	<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" scr="./bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
+		/*$(document).ready(function(){
 			$('span.pq').each(function(){
 				var quote=$(this).clone();
 				quote.removeClass('pq');
 				quote.addClass('pullquote');
 				$(this).before(quote);
 			});
-		});
+		});*/
+		window.onload = function(){
+			var pos = 0;
+			var box = document.getElementById('box');
+			var t = setInterval(move, 10);
+	
+			function move(){
+				if (pos>=150) {
+					clearInterval(t);
+				}
+				else{
+					pos+=1;
+					box.style.left=pos+'px';
+				}
+			}
+		}
+		//Slaider
+		var images=[
+			"./image/1.jpg",
+			"./image/2.jpg",
+			"./image/3.jpg",
+			"./image/4.jpg"
+		];
+		var num = 0;
+		function next(){
+			var slider = document.getElementById('slider');
+			num++;
+			if(num >= images.length){
+				num = 0;
+			}
+			slider.src = images[num];
+		}
+		function prev(){
+			var slider = document.getElementById('slider');
+			num--;
+			if(num < 0){
+				num = images.length-1;
+			}
+			slider.src = images[num];
+		}
+
 	</script>
 	<title></title>
 </head>
 <body>
 	<header>
+		<div>
+			<button onclick="prev()">Prev</button>
+			<img id ='slider' src="./image/1.jpg" width="200px" height="100px"/>
+			<button onclick="next()">Next</button>
+		</div>
 		<div><span class='pq'>
 			<h1>Заголовок 1</h1>
 			<ul>
@@ -45,6 +103,9 @@
 			</ul>
 		</span></div>
 	</header>
+	<div id="container">
+		<div id="box"></div>
+	</div>
 	<div>
 		<h2>Заголовок 2</h2>
 		<p>Текст абзаца...</p>
