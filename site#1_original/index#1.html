@@ -11,9 +11,7 @@
 			$('a.show_popup').click(function(){
 				$('div.' + $(this).attr('rel')).fadeIn(500);
 				$('body').append('<div id = "overlay"></div>');
-				$('#overlay').show().css()({
-					'filter' : 'alpha(opacity = 80)'
-				});
+				$('#overlay').show().css()({'filter' : 'alpha(opacity = 80)'});
 				return false;
 			});
 			$('a.close').click(function(){
@@ -24,11 +22,12 @@
 			//script for tabs
 			$('div.selectTabs').each(function(){
 				var tmp = $(this);
-				$(tmp).find('.linetabs li').each(function(i){
+				$(tmp).find('.lineTabs li').each(function(i){
 					$(tmp).find('.lineTabs li:eq("+i+")a').click(function(){
 						var tab_id = i + 1;
 						$(tmp).find('.lineTabs li').removeClass('active');
-						$(this).find('.tab_content div').stop(false, false).hide();
+						$(this).parent().addClass('active');
+						$(tmp).find('.tab_content div').stop(false, false).hide();
 						$(tmp).find('.tab' + tab_id).stop(false, false).fadeIn(300);
 						return false;
 					});
@@ -126,7 +125,7 @@
 		<a class="close" href="#">Close</a>
 		<h2></h2>
 		<div class="img_wrap">
-			<img src="" alt="">
+			<img src="./image/close.png" alt="">
 			<img src="" alt="">
 			<img src="" alt="">
 			<img src="" alt="">
@@ -138,7 +137,7 @@
 		<div class="selectTabs">
 			<ul class="lineTabs">
 				<li class="active"><a href="#">Удобства вкладок</a></li>
-				<li><a href="#"></a>Преимущества вкладок</li>
+				<li><a href="#">Преимущества вкладок</a></li>
 			</ul>
 			<div class="tab_content">
 				<div class="tab1">
