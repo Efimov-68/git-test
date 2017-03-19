@@ -1,0 +1,46 @@
+<!--В качестве событий выступают следующие атрибуты: onblur, onchange, onclick, ondblclick, onfocus, onkeydown, onkeypress, onkeyup, onload, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, onreset, onselect, onsubmit, onunload.
+
+Язык определяет язык программирования, на котором написан скрипт, может принимать следующие значения:
+
+javascript — JavaScript;
+jscript — JScript, разновидность языка JavaScript разработанная компанией Microsoft;
+vbscript — язык программирования VBScript основанный на Visual Basic.
+По умолчанию значением выступает javascript.
+
+Также допускается указывать скрипт в качестве значения атрибута href тега <a>, но предваряя скрипт ключевым словом javascript:, в противном случае браузер будет воспринимать значение как ссылку. Вместо javascript пишется нужный язык программирования скрипта.-->
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Скрипты</title>
+  <style>
+   #msg { 
+    display: none;
+    position: absolute;
+    width: 280px;
+    top: 200px;
+    left: 50%;
+    margin-left: -150px; 
+    background: #fc0;
+    padding: 10px;
+   }
+  </style>
+  <script>
+   function textMsg(msg) {
+    document.getElementById('text').innerHTML = msg;
+    document.getElementById('msg').style.display = 'block';
+   }
+   function closeMsg() {
+    document.getElementById('msg').style.display = 'none';
+   }
+  </script>
+ </head>
+ <body>
+  <div id="msg">
+   <div id="text"></div>
+   <div id="close"><a href="javascript:closeMsg()">[Закрыть]</a></div>
+  </div>
+  <p>Нажмите на <a href="#" onclick="textMsg('Спасибо, что нажали на ссылку!')">  
+    ссылку для открытия сообщения</a>.</p>
+ </body>
+</html>
