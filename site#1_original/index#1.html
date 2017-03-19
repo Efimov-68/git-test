@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/my_style_menu.css">
+	<link rel="stylesheet" type="text/css" href="./css/my_style_popup.css">
+	<script src="./js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//script for popups
+			$('a.show_popup').click(function(){
+				$('div.' + $(this).attr('rel')).fadeIn(500);
+				$('body').append('<div id = "overlay"></div>');
+				$('#overlay').show().css()({
+					'filter' : 'alpha(opacity = 80)'
+				});
+				return false;
+			});
+			$('a.close').click(function(){
+				$(this).parent().fadeOut(100);
+				$('#overlay').remove('#overlay');
+				return false;
+			});
+			//script for tabs
+			$('div.selectTabs').each(function(){
+				var tmp = $(this);
+				$(tmp).find('.linetabs li').each(function(i){
+					$(tmp).find('.lineTabs li:eq("+i+")a').click(function(){
+						var tab_id = i + 1;
+						$(tmp).find('.lineTabs li').removeClass('active');
+						$(this).find('.tab_content div').stop(false, false).hide();
+						$(tmp).find('.tab' + tab_id).stop(false, false).fadeIn(300);
+						return false;
+					});
+				});
+			});
+		});
+	</script>
+	<title>Титульная страница</title>
+</head>
+<body>
+	<header align="center">
+		<div><!--Главное меню-->
+			<ul id="nav">
+				<li><a href="#" title="Вернуться на главную страницу">Главная</a></li>
+				<li><a href="#" title="О нашей школе">О школе</a></li>
+				<li><a href="#" title="Программирование">Программирование</a>
+					<ul><li><a href="#">Основы программирования</a></li>
+						<li><a href="#">Scratch</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">HTML+CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Android, iOS</a></li>
+						<li><a href="#">Ruby</a></li>
+						<li><a href="#">C#</a></li>
+						<li><a href="#">1C</a></li>
+						<li><a href="#">PHP-MySQL</a></li>
+						<li><a href="#">Linux</a></li>
+						<li><a href="#">C++</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="Маркетинг">Маркетинг</a>
+					<ul><li><a href="#">SMM</a></li>
+						<li><a href="#">VK, Fb</a></li>
+						<li><a href="#">Основы Маркетинга</a></li>
+						<li><a href="#">SEO</a></li>
+						<li><a href="#">Instagram</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="Дизайн">Дизайн</a>
+					<ul><li><a href="#">Основы Веб-дизайна</a></li>
+						<li><a href="#">Курсы Photoshop, Gimp</a></li>
+						<li><a href="#">Видеомонтаж</a></li>
+						<li><a href="#">Фотография</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="О тренерах">О тренерах</a></li>
+				<li><a href="#" title="Расписание курсов">Расписание</a></li>
+				<li><a href="#" title="Галерея">Галерея</a></li>
+				<li><a href="#" title="Библиотека">Библиотека</a></li>
+				<li><a href="#" title="Контакты">Контакты</a>
+				<ul>
+					<li><a href="#" title="Часы работы">Часы работы</a></li>
+					<li><a href="#" title="Местоположение">Местоположение</a></li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="border" style="margin-top: 2px; box-shadow: 0 1px 10px black; background-color: red;">
+		<h1>"Школа программирования для детей"<br>Ефимова Романа&trade;</h1>
+		<h3>Так что же такое программирование?</h3>
+		<div style="box-shadow: 0 1px 15px black; margin-left: 15px; margin-right: 20%; border-radius: 5px; background-color: lightblue;">
+			<p>Ниже мы попробуем вместе разобраться в этом вопросе и выбрать подходящий язык программирования для Вас.</p>
+			<p>Компьютерный код похож на иностранный язык, и этот язык может освоить каждый!</p>
+			<p>Мы учим управлять компьютером используя строки программного кода, введенные с клавиатуры.</p>
+			<hr style="box-shadow: 0 1px 10px black;">
+			<p>Наша школа готова предложить обучающие курсы для детей от 5 до 12 лет. Дополнительные подготовительные курсы для поступающих в ВУЗы и тех кто не представляет свою жизнь без программирования.</p>
+			<p>Наши курсы расчитаны, как для самых маленьких программистов от 5 лет, так и для уже взрослых людей, которые решили </p>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="link_group">
+		<a class="show_popup" rel="reg_form" href="#">Регистрация</a>
+		<a class="show_popup" rel="photo_win" href="#">Галерея</a>
+		<a class="show_popup" rel="tabs_info" href="#">Инфо</a>
+	</div>
+	<div class="popup reg_form">
+		<a class="close" href="#">Close</a>
+		<h2></h2>
+		<form method="post" action="">
+			<label for="login">Login</label>
+			<input type="text" name="login">
+			<label for="password">Password</label>
+			<input type="password" name="password">
+			<input type="submit" name="Войти">
+		</form>
+	</div>
+	<div class="popup photo_win">
+		<a class="close" href="#">Close</a>
+		<h2></h2>
+		<div class="img_wrap">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
+		</div>
+	</div>
+	<div class="popup tabs_info">
+		<a class="close" href="#">Close</a>
+		<h2></h2>
+		<div class="selectTabs">
+			<ul class="lineTabs">
+				<li class="active"><a href="#">Удобства вкладок</a></li>
+				<li><a href="#"></a>Преимущества вкладок</li>
+			</ul>
+			<div class="tab_content">
+				<div class="tab1">
+					<p>Tabs</p>
+				</div>
+				<div class="tab2">
+					<p><img src="" alt=""></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
